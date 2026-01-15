@@ -1,8 +1,28 @@
 /* ============================================
    ERIC COSTE - AUTHOR WEBSITE
-   Brutalist Style CSS
+   Optimized CSS - Brutalist Style
    Mobile-first responsive design
    ============================================ */
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+    --color-primary: #000;
+    --color-secondary: #333;
+    --color-accent: #fbbf24;
+    --color-bg: #fff;
+    --color-bg-alt: #f5f5f5;
+    --color-text: #000;
+    --color-text-muted: #666;
+    --color-border: #000;
+    --color-error: #dc2626;
+    --color-success: #16a34a;
+    --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --border-width: 3px;
+    --transition-fast: 0.15s ease;
+    --transition-medium: 0.25s ease;
+    --shadow-hover: 0 4px 12px rgba(0,0,0,0.15);
+    --focus-ring: 0 0 0 3px rgba(0,0,0,0.3);
+}
 
 /* ---------- CSS Reset & Base ---------- */
 *,
@@ -15,18 +35,22 @@
 
 html {
     scroll-behavior: smooth;
-    /* Offset for sticky header when scrolling to anchors */
     scroll-padding-top: 80px;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: var(--font-stack);
     font-size: 18px;
     line-height: 1.6;
-    color: #000;
-    background-color: #fff;
+    color: var(--color-text);
+    background-color: var(--color-bg);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improve text rendering */
+body, button, input, textarea {
+    text-rendering: optimizeLegibility;
 }
 
 /* ---------- Utility Classes ---------- */
@@ -49,6 +73,20 @@ body {
     border: 0;
 }
 
+/* ---------- Focus States (Accessibility) ---------- */
+:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
 /* ---------- Typography ---------- */
 h1, h2, h3 {
     font-weight: 900;
@@ -65,9 +103,10 @@ p:last-child {
 }
 
 a {
-    color: #000;
+    color: var(--color-primary);
     text-decoration: underline;
     text-underline-offset: 3px;
+    transition: text-decoration-thickness var(--transition-fast);
 }
 
 a:hover {
@@ -83,35 +122,58 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     text-decoration: none;
-    border: 3px solid #000;
+    border: var(--border-width) solid var(--color-border);
     cursor: pointer;
-    transition: background-color 0.1s, color 0.1s;
+    transition: 
+        background-color var(--transition-fast),
+        color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
 }
 
 .btn-primary {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
 }
 
 .btn-primary:hover {
-    background-color: #333;
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: none;
 }
 
 .btn-secondary {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--color-bg);
+    color: var(--color-primary);
 }
 
 .btn-secondary:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+    box-shadow: none;
 }
 
 .btn-disabled {
     background-color: #ddd;
-    color: #666;
+    color: var(--color-text-muted);
     border-color: #999;
     cursor: not-allowed;
+}
+
+.btn-disabled:hover {
+    transform: none;
+    box-shadow: none;
 }
 
 /* ---------- Header ---------- */
@@ -119,8 +181,8 @@ a:hover {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #fff;
-    border-bottom: 3px solid #000;
+    background-color: var(--color-bg);
+    border-bottom: var(--border-width) solid var(--color-border);
 }
 
 .header-inner {
@@ -161,8 +223,8 @@ a:hover {
     display: block;
     width: 100%;
     height: 3px;
-    background-color: #000;
-    transition: transform 0.2s, opacity 0.2s;
+    background-color: var(--color-primary);
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 /* Menu toggle active state */
@@ -185,13 +247,25 @@ a:hover {
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #fff;
-    border-bottom: 3px solid #000;
+    background-color: var(--color-bg);
+    border-bottom: var(--border-width) solid var(--color-border);
     padding: 20px;
 }
 
 .nav.active {
     display: block;
+    animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .nav-link {
@@ -203,6 +277,7 @@ a:hover {
     letter-spacing: 0.05em;
     text-decoration: none;
     border-bottom: 1px solid #ddd;
+    transition: background-color var(--transition-fast);
 }
 
 .nav-link:last-child {
@@ -217,7 +292,7 @@ a:hover {
 /* ---------- Hero Section ---------- */
 .hero {
     padding: 80px 0 100px;
-    border-bottom: 3px solid #000;
+    border-bottom: var(--border-width) solid var(--color-border);
 }
 
 .hero-title {
@@ -230,17 +305,17 @@ a:hover {
     font-size: clamp(18px, 4vw, 22px);
     margin-bottom: 40px;
     max-width: 600px;
-    color: #333;
+    color: var(--color-secondary);
 }
 
 /* ---------- Sections ---------- */
 .section {
     padding: 80px 0;
-    border-bottom: 3px solid #000;
+    border-bottom: var(--border-width) solid var(--color-border);
 }
 
 .section-alt {
-    background-color: #f5f5f5;
+    background-color: var(--color-bg-alt);
 }
 
 .section-title {
@@ -258,16 +333,22 @@ a:hover {
 }
 
 .book-card {
-    border: 3px solid #000;
+    border: var(--border-width) solid var(--color-border);
     padding: 25px;
-    background-color: #fff;
+    background-color: var(--color-bg);
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
 }
 
 .book-cover {
     width: 100%;
     aspect-ratio: 2 / 3;
     margin-bottom: 20px;
-    border: 2px solid #000;
+    border: 2px solid var(--color-border);
     overflow: hidden;
     background-color: #eee;
 }
@@ -277,6 +358,11 @@ a:hover {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform var(--transition-medium);
+}
+
+.book-card:hover .book-cover img {
+    transform: scale(1.02);
 }
 
 .book-title {
@@ -286,7 +372,7 @@ a:hover {
 
 .book-tagline {
     font-size: 16px;
-    color: #333;
+    color: var(--color-secondary);
     margin-bottom: 20px;
 }
 
@@ -295,12 +381,27 @@ a:hover {
     text-align: center;
 }
 
+/* Featured book card */
+.book-card-featured {
+    background: linear-gradient(135deg, #f8f8f8 0%, #fff 100%);
+}
+
+/* Coming soon card */
+.book-card-soon {
+    opacity: 0.7;
+}
+
+.book-card-soon:hover {
+    transform: none;
+    box-shadow: none;
+}
+
 /* ---------- Trust Stats Section ---------- */
 .trust-section {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
     padding: 60px 0;
-    border-bottom: 3px solid #000;
+    border-bottom: var(--border-width) solid var(--color-border);
 }
 
 .trust-grid {
@@ -325,7 +426,7 @@ a:hover {
 
 .trust-stars {
     font-size: 24px;
-    color: #fbbf24;
+    color: var(--color-accent);
     letter-spacing: 2px;
 }
 
@@ -338,8 +439,8 @@ a:hover {
 
 /* ---------- Testimonials Section ---------- */
 .testimonials-section {
-    background-color: #fff;
-    border-bottom: 3px solid #000;
+    background-color: var(--color-bg);
+    border-bottom: var(--border-width) solid var(--color-border);
 }
 
 .testimonials-grid {
@@ -349,14 +450,20 @@ a:hover {
 }
 
 .testimonial-card {
-    border: 3px solid #000;
+    border: var(--border-width) solid var(--color-border);
     padding: 30px 25px;
     background-color: #fafafa;
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .testimonial-stars {
     font-size: 20px;
-    color: #fbbf24;
+    color: var(--color-accent);
     letter-spacing: 2px;
     margin-bottom: 15px;
 }
@@ -365,7 +472,7 @@ a:hover {
     font-size: 17px;
     line-height: 1.7;
     margin: 0 0 20px 0;
-    color: #333;
+    color: var(--color-secondary);
     font-style: italic;
 }
 
@@ -382,7 +489,7 @@ a:hover {
 
 .author-detail {
     font-size: 13px;
-    color: #666;
+    color: var(--color-text-muted);
 }
 
 /* ---------- About Section ---------- */
@@ -399,7 +506,7 @@ a:hover {
 .newsletter-intro {
     font-size: 18px;
     margin-bottom: 30px;
-    color: #333;
+    color: var(--color-secondary);
 }
 
 .newsletter-form {
@@ -417,17 +524,19 @@ a:hover {
     padding: 14px 18px;
     font-size: 18px;
     font-family: inherit;
-    border: 3px solid #000;
-    background-color: #fff;
+    border: var(--border-width) solid var(--color-border);
+    background-color: var(--color-bg);
     outline: none;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .form-input:focus {
-    background-color: #f5f5f5;
+    background-color: var(--color-bg-alt);
+    border-color: var(--color-secondary);
 }
 
 .form-input::placeholder {
-    color: #666;
+    color: var(--color-text-muted);
 }
 
 .form-message {
@@ -437,26 +546,22 @@ a:hover {
 }
 
 .form-message.success {
-    color: #000;
+    color: var(--color-success);
 }
 
 .form-message.error {
-    color: #900;
+    color: var(--color-error);
+}
+
+.form-hint {
+    margin-top: 15px;
+    font-size: 14px;
+    color: var(--color-text-muted);
 }
 
 /* Hidden honeypot field for Netlify Forms */
 .hidden-field {
     display: none;
-}
-
-/* ---------- Contact Section ---------- */
-#contact p {
-    margin-bottom: 20px;
-}
-
-#contact .btn {
-    text-transform: none;
-    letter-spacing: 0;
 }
 
 /* ---------- Nav Button (Contact) ---------- */
@@ -484,17 +589,35 @@ a:hover {
 
 .modal-overlay.active {
     display: flex;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .modal {
-    background-color: #fff;
-    border: 3px solid #000;
+    background-color: var(--color-bg);
+    border: var(--border-width) solid var(--color-border);
     width: 100%;
     max-width: 500px;
     max-height: 90vh;
     overflow-y: auto;
     padding: 40px 30px;
     position: relative;
+    animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .modal-close {
@@ -510,11 +633,12 @@ a:hover {
     padding: 0;
     width: 40px;
     height: 40px;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
 .modal-close:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
 }
 
 .modal-title {
@@ -525,7 +649,7 @@ a:hover {
 
 .modal-intro {
     margin-bottom: 30px;
-    color: #333;
+    color: var(--color-secondary);
 }
 
 .contact-form .form-field {
@@ -672,21 +796,49 @@ a:hover {
     }
 }
 
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 /* ---------- Print Styles ---------- */
 @media print {
     .header,
     .menu-toggle,
     .btn,
-    .newsletter-form {
+    .newsletter-form,
+    .modal-overlay {
         display: none;
     }
     
     body {
         font-size: 12pt;
+        color: #000;
+        background: #fff;
     }
     
     .section {
         border-bottom: 1px solid #000;
         padding: 20px 0;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
     }
 }

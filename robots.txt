@@ -1,8 +1,8 @@
 # robots.txt for Eric Coste Author Website
-# https://[SITE_URL]
+# https://ericcoste.com
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://[SITE_URL]/sitemap.xml
+Sitemap: https://ericcoste.com/sitemap.xml

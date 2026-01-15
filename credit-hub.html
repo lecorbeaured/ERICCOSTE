@@ -4,34 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://payhip.com">
+    <link rel="dns-prefetch" href="https://payhip.com">
+    
     <!-- Primary Meta Tags -->
-    <title>Credit Hub | Eric Coste - Simple Guides to Fix and Build Your Credit</title>
-    <meta name="description" content="Practical, no-nonsense books on credit repair and building credit. Eric Coste breaks down complex credit topics into simple steps anyone can follow.">
+    <title>Credit Hub | DIY Credit Repair Guides by Eric Coste - Fix Your Credit Score</title>
+    <meta name="description" content="Learn how to fix your credit score with practical, step-by-step DIY credit repair guides. Dispute negative items, stop debt collectors, and rebuild your credit to 700+. Over 2,700 copies sold.">
     <meta name="author" content="Eric Coste">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="keywords" content="credit repair, fix credit score, DIY credit repair, dispute credit report, remove negative items, credit repair guide, rebuild credit, 700 credit score, stop debt collectors, Eric Coste">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://[SITE_URL]/credit-hub.html">
-    <meta property="og:title" content="Credit Hub | Eric Coste - Simple Guides to Fix and Build Your Credit">
-    <meta property="og:description" content="Practical, no-nonsense books on credit repair and building credit. Eric Coste breaks down complex credit topics into simple steps anyone can follow.">
-    <meta property="og:image" content="[SOCIAL_SHARE_IMAGE_URL]">
+    <meta property="og:url" content="https://ericcoste.com/credit-hub.html">
+    <meta property="og:title" content="Credit Hub | DIY Credit Repair Guides - Fix Your Credit Score">
+    <meta property="og:description" content="Step-by-step guides to fix your credit score. Dispute negative items, stop debt collectors, and rebuild to 700+.">
+    <meta property="og:site_name" content="Eric Coste">
+    <meta property="og:locale" content="en_US">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://[SITE_URL]/credit-hub.html">
-    <meta name="twitter:title" content="Credit Hub | Eric Coste - Simple Guides to Fix and Build Your Credit">
-    <meta name="twitter:description" content="Practical, no-nonsense books on credit repair and building credit. Eric Coste breaks down complex credit topics into simple steps anyone can follow.">
-    <meta name="twitter:image" content="[SOCIAL_SHARE_IMAGE_URL]">
+    <meta name="twitter:url" content="https://ericcoste.com/credit-hub.html">
+    <meta name="twitter:title" content="Credit Hub | DIY Credit Repair Guides - Fix Your Credit Score">
+    <meta name="twitter:description" content="Step-by-step guides to fix your credit score. Dispute negative items, stop debt collectors, and rebuild to 700+.">
+    <meta name="twitter:creator" content="@ericcoste">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://[SITE_URL]/credit-hub.html">
+    <link rel="canonical" href="https://ericcoste.com/credit-hub.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
     
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="credit-hub.css">
+    <!-- Critical CSS - Inline for faster FCP -->
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;scroll-padding-top:80px}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:18px;line-height:1.6;color:#000;background:#fff;-webkit-font-smoothing:antialiased}
+        .container{width:100%;max-width:900px;margin:0 auto;padding:0 20px}
+        .header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:3px solid #000}
+        .header-inner{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;max-width:1200px;margin:0 auto}
+        .logo{font-size:20px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;color:#000}
+        .back-link{font-size:14px;font-weight:700;text-decoration:none;color:#000}
+        .hero{padding:80px 0 100px;border-bottom:3px solid #000;background:linear-gradient(135deg,#f8f8f8 0%,#fff 100%)}
+        .hero-eyebrow{font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:#666;margin-bottom:15px}
+        .hero-title{font-size:clamp(28px,7vw,48px);font-weight:900;line-height:1.1;margin-bottom:20px;max-width:700px}
+        .hero-subtitle{font-size:clamp(16px,3.5vw,20px);margin-bottom:40px;max-width:600px;color:#333}
+        .btn{display:inline-block;padding:14px 28px;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;border:3px solid #000;cursor:pointer;transition:background .15s,color .15s,transform .1s}
+        .btn-primary{background:#000;color:#fff}
+        .btn-primary:hover{background:#333;transform:translateY(-2px)}
+        @media(min-width:900px){.hero{padding:100px 0 120px}}
+    </style>
+    
+    <!-- Deferred full stylesheet -->
+    <link rel="stylesheet" href="credit-hub.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="credit-hub.css"></noscript>
     
     <!-- GA4 placeholder: replace G-XXXXXXX with actual Measurement ID -->
     <!--
@@ -44,185 +72,299 @@
     </script>
     -->
     
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data - Collection Page -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "Credit Hub - Credit Repair Books by Eric Coste",
-        "description": "Practical, no-nonsense books on credit repair and building credit.",
+        "@id": "https://ericcoste.com/credit-hub.html",
+        "name": "Credit Hub - DIY Credit Repair Guides by Eric Coste",
+        "description": "Practical, step-by-step guides to fix your credit score, dispute negative items, and rebuild your credit to 700+.",
+        "url": "https://ericcoste.com/credit-hub.html",
         "author": {
             "@type": "Person",
+            "@id": "https://ericcoste.com/#person",
             "name": "Eric Coste"
         },
-        "mainEntity": {
-            "@type": "ItemList",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
             "itemListElement": [
                 {
-                    "@type": "Book",
+                    "@type": "ListItem",
                     "position": 1,
-                    "name": "[CREDIT_BOOK_1_TITLE]",
-                    "description": "[CREDIT_BOOK_1_TAGLINE]",
-                    "author": {
-                        "@type": "Person",
-                        "name": "Eric Coste"
-                    },
-                    "url": "[PAYHIP_CREDIT_BOOK_1_URL]"
+                    "name": "Home",
+                    "item": "https://ericcoste.com/"
                 },
                 {
-                    "@type": "Book",
+                    "@type": "ListItem",
                     "position": 2,
-                    "name": "[CREDIT_BOOK_2_TITLE]",
-                    "description": "[CREDIT_BOOK_2_TAGLINE]",
-                    "author": {
-                        "@type": "Person",
-                        "name": "Eric Coste"
-                    },
-                    "url": "[PAYHIP_CREDIT_BOOK_2_URL]"
-                },
-                {
-                    "@type": "Book",
-                    "position": 3,
-                    "name": "[CREDIT_BOOK_3_TITLE]",
-                    "description": "[CREDIT_BOOK_3_TAGLINE]",
-                    "author": {
-                        "@type": "Person",
-                        "name": "Eric Coste"
-                    },
-                    "url": "[PAYHIP_CREDIT_BOOK_3_URL]"
+                    "name": "Credit Hub",
+                    "item": "https://ericcoste.com/credit-hub.html"
                 }
             ]
         }
     }
     </script>
+    
+    <!-- JSON-LD Structured Data - Credit Repair Books -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "DIY Credit Repair Guides",
+        "description": "Step-by-step credit repair guides by Eric Coste",
+        "numberOfItems": 9,
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "Book",
+                    "name": "Pre-Dispute Preparation",
+                    "description": "The #1 Mistake That Ruins Credit Disputes - Learn what to do before disputing negative items",
+                    "author": {"@type": "Person", "name": "Eric Coste"},
+                    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+                    "genre": "Personal Finance"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "Book",
+                    "name": "Force Bureaus to Delete",
+                    "description": "How to Force Credit Bureaus to Delete Negative Items",
+                    "author": {"@type": "Person", "name": "Eric Coste"},
+                    "url": "https://payhip.com/b/lA9Yu",
+                    "offers": {"@type": "Offer", "price": "19", "priceCurrency": "USD"},
+                    "genre": "Personal Finance"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@type": "Book",
+                    "name": "Rebuild to 700+",
+                    "description": "Step-by-step guide to rebuild your credit score to 700 and above",
+                    "author": {"@type": "Person", "name": "Eric Coste"},
+                    "url": "https://payhip.com/b/GklyD",
+                    "offers": {"@type": "Offer", "price": "17", "priceCurrency": "USD"},
+                    "genre": "Personal Finance"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                    "@type": "Book",
+                    "name": "Stop Debt Collectors",
+                    "description": "Stop Debt Collectors Cold - Know your rights and protect yourself",
+                    "author": {"@type": "Person", "name": "Eric Coste"},
+                    "url": "https://payhip.com/b/t2jZp",
+                    "offers": {"@type": "Offer", "price": "19", "priceCurrency": "USD"},
+                    "genre": "Personal Finance"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "item": {
+                    "@type": "Book",
+                    "name": "Fight Back When Sued",
+                    "description": "Sued by a Collector? Fight Back - Legal strategies for debt lawsuits",
+                    "author": {"@type": "Person", "name": "Eric Coste"},
+                    "url": "https://payhip.com/b/B0r5l",
+                    "offers": {"@type": "Offer", "price": "27", "priceCurrency": "USD"},
+                    "genre": "Personal Finance"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 6,
+                "item": {
+                    "@type": "Book",
+                    "name": "Remove Hard Inquiries",
+                    "description": "Remove Hard Inquiries & Lock It Down - Protect your credit from unauthorized pulls",
+                    "author": {"@type": "Person", "name": "Eric Coste"},
+                    "url": "https://payhip.com/b/bVCSs",
+                    "offers": {"@type": "Offer", "price": "14", "priceCurrency": "USD"},
+                    "genre": "Personal Finance"
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- JSON-LD FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Do I need any prior knowledge about credit?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Not at all. These books are written for complete beginners. I explain everything from the ground up, assuming you're starting from zero."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is this different from free information online?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Free content is scattered and often contradictory. These books give you a clear, organized path from start to finish, no jumping between tabs or wondering what to do next."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How quickly will I see results?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on your situation, but many people see changes within 30-45 days of disputing items. The books give you realistic timelines and expectations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What format are the books in?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "All books are digital (PDF) so you can start reading immediately. You can read on any device: phone, tablet, or computer."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Minimal Header -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="header-inner">
-            <a href="index.html" class="logo">Eric Coste</a>
-            <a href="index.html" class="back-link">← Main Site</a>
+            <a href="index.html" class="logo" aria-label="Eric Coste - Home">Eric Coste</a>
+            <a href="index.html" class="back-link" aria-label="Return to main site">← Main Site</a>
         </div>
     </header>
     
-    <main>
-        <!-- Hero Section - Warm Welcome -->
-        <section class="hero" id="hero">
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero" aria-labelledby="hero-heading">
             <div class="container">
                 <p class="hero-eyebrow">Welcome to the Credit Hub</p>
-                <h1 class="hero-title">Fixing Your Credit Doesn't Have to Be Complicated</h1>
+                <h1 class="hero-title" id="hero-heading">Fixing Your Credit Doesn't Have to Be Complicated</h1>
                 <p class="hero-subtitle">No confusing jargon. No overwhelming systems. Just clear, practical steps to help you understand and improve your credit, at your own pace.</p>
                 <a href="#books" class="btn btn-primary">See How I Can Help</a>
             </div>
         </section>
         
         <!-- Empathy Section -->
-        <section class="section empathy-section" id="empathy">
+        <section class="section empathy-section" id="empathy" aria-labelledby="empathy-heading">
             <div class="container">
-                <h2 class="section-title">I Get It. Credit Can Feel Overwhelming.</h2>
+                <h2 class="section-title" id="empathy-heading">I Get It. Credit Can Feel Overwhelming.</h2>
                 <div class="empathy-content">
                     <p>Maybe you've been denied for a loan or credit card. Maybe you're staring at your credit report wondering where to even start. Or maybe you just want to build better credit but don't know the rules of the game.</p>
-                    <p>I've been there. I've personally disputed negative items across all three bureaus and learned what actually works, not from theory, but from doing it myself.</p>
+                    <p>I've been there. I've personally disputed negative items across all three bureaus and learned what actually works—not from theory, but from doing it myself.</p>
                     <p>That's why I wrote these books: to give you the same clarity I wish I had when I started.</p>
                 </div>
             </div>
         </section>
         
         <!-- Books Section -->
-        <section class="section books-section" id="books">
+        <section class="section books-section" id="books" aria-labelledby="books-heading">
             <div class="container">
-                <h2 class="section-title">Books to Help You Take Control</h2>
+                <h2 class="section-title" id="books-heading">Books to Help You Take Control</h2>
                 <p class="section-intro">Each book is designed to be simple, actionable, and judgment-free. Pick what fits your situation.</p>
                 
                 <div class="books-grid">
                     <!-- Guide 1 - FREE -->
-                    <article class="book-card">
+                    <article class="book-card" itemscope itemtype="https://schema.org/Book">
                         <div class="book-cover">
-                            <img src="images/guide1.png" alt="Pre-Dispute Preparation guide cover" loading="lazy">
+                            <img src="images/guide1.png" alt="Pre-Dispute Preparation - Free Credit Repair Guide" loading="lazy" width="300" height="450" itemprop="image">
                         </div>
                         <div class="book-details">
                             <span class="price-badge free-badge">Free</span>
-                            <h3 class="book-title">Pre-Dispute Preparation</h3>
-                            <p class="book-tagline">The #1 Mistake That Ruins Credit Disputes</p>
-                            <button class="btn btn-secondary btn-free-guide" id="free-guide-btn">Get It Free</button>
+                            <h3 class="book-title" itemprop="name">Pre-Dispute Preparation</h3>
+                            <p class="book-tagline" itemprop="description">The #1 Mistake That Ruins Credit Disputes</p>
+                            <button class="btn btn-secondary btn-free-guide" id="free-guide-btn" aria-haspopup="dialog">Get It Free</button>
                         </div>
                     </article>
                     
                     <!-- Guide 2 -->
-                    <article class="book-card">
+                    <article class="book-card" itemscope itemtype="https://schema.org/Book">
                         <div class="book-cover">
-                            <img src="images/guide2.png" alt="Force Bureaus to Delete guide cover" loading="lazy">
+                            <img src="images/guide2.png" alt="Force Bureaus to Delete - Credit Dispute Guide" loading="lazy" width="300" height="450" itemprop="image">
                         </div>
                         <div class="book-details">
                             <span class="price-badge">$19</span>
-                            <h3 class="book-title">Force Bureaus to Delete</h3>
-                            <p class="book-tagline">How to Force Bureaus to Delete</p>
-                            <a href="https://payhip.com/b/lA9Yu" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on Payhip</a>
+                            <h3 class="book-title" itemprop="name">Force Bureaus to Delete</h3>
+                            <p class="book-tagline" itemprop="description">How to Force Bureaus to Delete Negative Items</p>
+                            <a href="https://payhip.com/b/lA9Yu" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" itemprop="url">View on Payhip</a>
                         </div>
                     </article>
                     
                     <!-- Guide 3 -->
-                    <article class="book-card">
+                    <article class="book-card" itemscope itemtype="https://schema.org/Book">
                         <div class="book-cover">
-                            <img src="images/guide3.png" alt="Rebuild to 700+ guide cover" loading="lazy">
+                            <img src="images/guide3.png" alt="Rebuild to 700+ Credit Score Guide" loading="lazy" width="300" height="450" itemprop="image">
                         </div>
                         <div class="book-details">
                             <span class="price-badge">$17</span>
-                            <h3 class="book-title">Rebuild to 700+</h3>
-                            <p class="book-tagline">Rebuild to 700+</p>
-                            <a href="https://payhip.com/b/GklyD" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on Payhip</a>
+                            <h3 class="book-title" itemprop="name">Rebuild to 700+</h3>
+                            <p class="book-tagline" itemprop="description">Step-by-Step Guide to a 700+ Credit Score</p>
+                            <a href="https://payhip.com/b/GklyD" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" itemprop="url">View on Payhip</a>
                         </div>
                     </article>
                     
                     <!-- Guide 4 -->
-                    <article class="book-card">
+                    <article class="book-card" itemscope itemtype="https://schema.org/Book">
                         <div class="book-cover">
-                            <img src="images/guide4.png" alt="Stop Debt Collectors guide cover" loading="lazy">
+                            <img src="images/guide4.png" alt="Stop Debt Collectors - Know Your Rights Guide" loading="lazy" width="300" height="450" itemprop="image">
                         </div>
                         <div class="book-details">
                             <span class="price-badge">$19</span>
-                            <h3 class="book-title">Stop Debt Collectors</h3>
-                            <p class="book-tagline">Stop Debt Collectors Cold</p>
-                            <a href="https://payhip.com/b/t2jZp" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on Payhip</a>
+                            <h3 class="book-title" itemprop="name">Stop Debt Collectors</h3>
+                            <p class="book-tagline" itemprop="description">Stop Debt Collectors Cold</p>
+                            <a href="https://payhip.com/b/t2jZp" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" itemprop="url">View on Payhip</a>
                         </div>
                     </article>
                     
                     <!-- Guide 5 -->
-                    <article class="book-card">
+                    <article class="book-card" itemscope itemtype="https://schema.org/Book">
                         <div class="book-cover">
-                            <img src="images/guide5.png" alt="Fight Back When Sued guide cover" loading="lazy">
+                            <img src="images/guide5.png" alt="Fight Back When Sued by Debt Collector Guide" loading="lazy" width="300" height="450" itemprop="image">
                         </div>
                         <div class="book-details">
                             <span class="price-badge">$27</span>
-                            <h3 class="book-title">Fight Back When Sued</h3>
-                            <p class="book-tagline">Sued by a Collector? Fight Back</p>
-                            <a href="https://payhip.com/b/B0r5l" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on Payhip</a>
+                            <h3 class="book-title" itemprop="name">Fight Back When Sued</h3>
+                            <p class="book-tagline" itemprop="description">Sued by a Collector? Fight Back</p>
+                            <a href="https://payhip.com/b/B0r5l" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" itemprop="url">View on Payhip</a>
                         </div>
                     </article>
                     
                     <!-- Guide 6 -->
-                    <article class="book-card">
+                    <article class="book-card" itemscope itemtype="https://schema.org/Book">
                         <div class="book-cover">
-                            <img src="images/guide6.png" alt="Remove Hard Inquiries guide cover" loading="lazy">
+                            <img src="images/guide6.png" alt="Remove Hard Inquiries from Credit Report Guide" loading="lazy" width="300" height="450" itemprop="image">
                         </div>
                         <div class="book-details">
                             <span class="price-badge">$14</span>
-                            <h3 class="book-title">Remove Hard Inquiries</h3>
-                            <p class="book-tagline">Remove Hard Inquiries & Lock It Down</p>
-                            <a href="https://payhip.com/b/bVCSs" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on Payhip</a>
+                            <h3 class="book-title" itemprop="name">Remove Hard Inquiries</h3>
+                            <p class="book-tagline" itemprop="description">Remove Hard Inquiries & Lock It Down</p>
+                            <a href="https://payhip.com/b/bVCSs" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" itemprop="url">View on Payhip</a>
                         </div>
                     </article>
                     
                     <!-- Bundle 1 - Starter Bundle -->
                     <article class="book-card bundle-card">
                         <div class="book-cover">
-                            <img src="images/bundle1.png" alt="Starter Bundle cover" loading="lazy">
+                            <img src="images/bundle1.png" alt="Credit Repair Starter Bundle - Guides 1-3" loading="lazy" width="300" height="450">
                         </div>
                         <div class="book-details">
                             <span class="bundle-badge">Bundle</span>
                             <span class="price-badge">$29</span>
                             <h3 class="book-title">Starter Bundle</h3>
-                            <p class="book-tagline">Includes Guides 1-3</p>
+                            <p class="book-tagline">Includes Guides 1-3 (Save $7)</p>
                             <a href="https://payhip.com/b/QtZrM" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on Payhip</a>
                         </div>
                     </article>
@@ -230,27 +372,27 @@
                     <!-- Bundle 2 - Defense Bundle -->
                     <article class="book-card bundle-card">
                         <div class="book-cover">
-                            <img src="images/bundle2.png" alt="Defense Bundle cover" loading="lazy">
+                            <img src="images/bundle2.png" alt="Credit Defense Bundle - Guides 4-5" loading="lazy" width="300" height="450">
                         </div>
                         <div class="book-details">
                             <span class="bundle-badge">Bundle</span>
                             <span class="price-badge">$37</span>
                             <h3 class="book-title">Defense Bundle</h3>
-                            <p class="book-tagline">Includes Guides 4-5</p>
+                            <p class="book-tagline">Includes Guides 4-5 (Save $9)</p>
                             <a href="https://payhip.com/b/Ry6ZY" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on Payhip</a>
                         </div>
                     </article>
                     
                     <!-- Bundle 3 - Complete System -->
-                    <article class="book-card bundle-card">
+                    <article class="book-card bundle-card bundle-featured">
                         <div class="book-cover">
-                            <img src="images/bundle3.png" alt="Complete System bundle cover" loading="lazy">
+                            <img src="images/bundle3.png" alt="Complete Credit Repair System - All 6 Guides" loading="lazy" width="300" height="450">
                         </div>
                         <div class="book-details">
-                            <span class="bundle-badge">Bundle</span>
+                            <span class="bundle-badge">Best Value</span>
                             <span class="price-badge">$67</span>
                             <h3 class="book-title">Complete System</h3>
-                            <p class="book-tagline">All 6 Guides Included</p>
+                            <p class="book-tagline">All 6 Guides Included (Save $49)</p>
                             <a href="https://payhip.com/b/7B2GO" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on Payhip</a>
                         </div>
                     </article>
@@ -259,20 +401,21 @@
         </section>
         
         <!-- Trust Stats Section -->
-        <section class="section trust-section" id="trust">
+        <section class="section trust-section" id="trust" aria-labelledby="trust-heading">
             <div class="container">
+                <h2 class="visually-hidden" id="trust-heading">Reader Statistics</h2>
                 <div class="trust-grid">
                     <div class="trust-item">
-                        <span class="trust-number">2,731+</span>
+                        <span class="trust-number" aria-label="Over 2,700 books sold">2,731+</span>
                         <span class="trust-label">Books Sold</span>
                     </div>
                     <div class="trust-item">
                         <span class="trust-number">4.8</span>
-                        <span class="trust-stars">★★★★★</span>
+                        <span class="trust-stars" aria-label="4.8 out of 5 stars">★★★★★</span>
                         <span class="trust-label">Average Rating</span>
                     </div>
                     <div class="trust-item">
-                        <span class="trust-number">5,276+</span>
+                        <span class="trust-number" aria-label="Over 5,200 readers helped">5,276+</span>
                         <span class="trust-label">Readers Helped</span>
                     </div>
                 </div>
@@ -280,39 +423,39 @@
         </section>
         
         <!-- Testimonials Section -->
-        <section class="section testimonials-section" id="testimonials">
+        <section class="section testimonials-section" id="testimonials" aria-labelledby="testimonials-heading">
             <div class="container">
-                <h2 class="section-title">What Readers Are Saying</h2>
+                <h2 class="section-title" id="testimonials-heading">What Readers Are Saying</h2>
                 <div class="testimonials-grid">
-                    <article class="testimonial-card">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <blockquote class="testimonial-quote">
+                    <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                        <blockquote class="testimonial-quote" itemprop="reviewBody">
                             "Finally a guide that explains credit in plain English. I disputed 3 items and 2 were removed within 30 days. Worth every penny."
                         </blockquote>
                         <footer class="testimonial-author">
-                            <span class="author-name">John B.</span>
+                            <span class="author-name" itemprop="author">John B.</span>
                             <span class="author-detail">Los Angeles, CA</span>
                         </footer>
                     </article>
                     
-                    <article class="testimonial-card">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <blockquote class="testimonial-quote">
+                    <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                        <blockquote class="testimonial-quote" itemprop="reviewBody">
                             "I went from a 580 to a 670 in 3 months following Eric's steps. Simple, no fluff, just actionable steps. Exactly what I needed."
                         </blockquote>
                         <footer class="testimonial-author">
-                            <span class="author-name">Mark S.</span>
+                            <span class="author-name" itemprop="author">Mark S.</span>
                             <span class="author-detail">Raleigh, NC</span>
                         </footer>
                     </article>
                     
-                    <article class="testimonial-card">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <blockquote class="testimonial-quote">
+                    <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                        <blockquote class="testimonial-quote" itemprop="reviewBody">
                             "I was overwhelmed by all the credit advice online. Eric breaks it down step by step. My score is up 85 points and climbing."
                         </blockquote>
                         <footer class="testimonial-author">
-                            <span class="author-name">Suzie P.</span>
+                            <span class="author-name" itemprop="author">Suzie P.</span>
                             <span class="author-detail">Las Vegas, NV</span>
                         </footer>
                     </article>
@@ -321,32 +464,32 @@
         </section>
         
         <!-- What You'll Learn Section -->
-        <section class="section learn-section" id="learn">
+        <section class="section learn-section" id="learn" aria-labelledby="learn-heading">
             <div class="container">
-                <h2 class="section-title">What You'll Learn</h2>
+                <h2 class="section-title" id="learn-heading">What You'll Learn</h2>
                 <div class="learn-grid">
                     <div class="learn-item">
-                        <span class="learn-icon">✓</span>
+                        <span class="learn-icon" aria-hidden="true">✓</span>
                         <p>How credit scores actually work (in plain English)</p>
                     </div>
                     <div class="learn-item">
-                        <span class="learn-icon">✓</span>
+                        <span class="learn-icon" aria-hidden="true">✓</span>
                         <p>How to read and understand your credit report</p>
                     </div>
                     <div class="learn-item">
-                        <span class="learn-icon">✓</span>
+                        <span class="learn-icon" aria-hidden="true">✓</span>
                         <p>Step-by-step dispute processes that get results</p>
                     </div>
                     <div class="learn-item">
-                        <span class="learn-icon">✓</span>
+                        <span class="learn-icon" aria-hidden="true">✓</span>
                         <p>How to build credit from scratch or rebuild after setbacks</p>
                     </div>
                     <div class="learn-item">
-                        <span class="learn-icon">✓</span>
+                        <span class="learn-icon" aria-hidden="true">✓</span>
                         <p>Simple habits to maintain good credit long-term</p>
                     </div>
                     <div class="learn-item">
-                        <span class="learn-icon">✓</span>
+                        <span class="learn-icon" aria-hidden="true">✓</span>
                         <p>What creditors and bureaus don't want you to know</p>
                     </div>
                 </div>
@@ -354,9 +497,9 @@
         </section>
         
         <!-- FAQ Section -->
-        <section class="section faq-section" id="faq">
+        <section class="section faq-section" id="faq" aria-labelledby="faq-heading">
             <div class="container">
-                <h2 class="section-title">Common Questions</h2>
+                <h2 class="section-title" id="faq-heading">Common Questions</h2>
                 <div class="faq-list">
                     <details class="faq-item">
                         <summary class="faq-question">Do I need any prior knowledge about credit?</summary>
@@ -365,7 +508,7 @@
                     
                     <details class="faq-item">
                         <summary class="faq-question">How is this different from free information online?</summary>
-                        <p class="faq-answer">Free content is scattered and often contradictory. These books give you a clear, organized path from start to finish, no jumping between tabs or wondering what to do next.</p>
+                        <p class="faq-answer">Free content is scattered and often contradictory. These books give you a clear, organized path from start to finish—no jumping between tabs or wondering what to do next.</p>
                     </details>
                     
                     <details class="faq-item">
@@ -382,11 +525,11 @@
         </section>
         
         <!-- Lead Capture Section -->
-        <section class="section lead-section" id="free-resource">
+        <section class="section lead-section" id="free-resource" aria-labelledby="lead-heading">
             <div class="container">
                 <div class="lead-box">
-                    <h2 class="lead-title">Want a Head Start?</h2>
-                    <p class="lead-subtitle">Grab my free Credit Repair Checklist, a simple guide to help you take the first steps today.</p>
+                    <h2 class="lead-title" id="lead-heading">Want a Head Start?</h2>
+                    <p class="lead-subtitle">Grab my free Credit Repair Checklist—a simple guide to help you take the first steps today.</p>
                     <form 
                         class="lead-form" 
                         id="lead-form"
@@ -396,9 +539,8 @@
                         data-netlify="true"
                         netlify-honeypot="bot-field"
                     >
-                        <!-- Honeypot field for spam protection -->
-                        <p class="hidden-field">
-                            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                        <p class="hidden-field" aria-hidden="true">
+                            <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1"></label>
                         </p>
                         <input type="hidden" name="form-name" value="credit-hub-checklist">
                         <div class="form-group">
@@ -422,9 +564,9 @@
         </section>
         
         <!-- Final CTA Section -->
-        <section class="section cta-section" id="cta">
+        <section class="section cta-section" id="cta" aria-labelledby="cta-heading">
             <div class="container">
-                <h2 class="section-title">Ready to Take Control of Your Credit?</h2>
+                <h2 class="section-title" id="cta-heading">Ready to Take Control of Your Credit?</h2>
                 <p class="cta-subtitle">Your credit score doesn't define you, but improving it can open doors. Let's get started.</p>
                 <a href="#books" class="btn btn-primary btn-large">Browse the Books</a>
             </div>
@@ -432,8 +574,8 @@
     </main>
     
     <!-- Free Guide Email Modal -->
-    <div class="modal-overlay" id="free-guide-modal" aria-hidden="true">
-        <div class="modal" role="dialog" aria-labelledby="free-guide-modal-title" aria-modal="true">
+    <div class="modal-overlay" id="free-guide-modal" aria-hidden="true" role="dialog" aria-labelledby="free-guide-modal-title" aria-modal="true">
+        <div class="modal">
             <button class="modal-close" id="free-guide-modal-close" aria-label="Close">&times;</button>
             <h2 class="modal-title" id="free-guide-modal-title">Get Your Free Guide</h2>
             <p class="modal-intro">Enter your email and we'll send the Pre-Dispute Preparation guide straight to your inbox.</p>
@@ -447,8 +589,8 @@
                 data-netlify="true"
                 netlify-honeypot="bot-field"
             >
-                <p class="hidden-field">
-                    <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                <p class="hidden-field" aria-hidden="true">
+                    <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1"></label>
                 </p>
                 <input type="hidden" name="form-name" value="free-guide-download">
                 <div class="form-field">
@@ -471,7 +613,7 @@
     </div>
     
     <!-- Sticky Bottom Bar (Mobile) -->
-    <div class="sticky-bar" id="sticky-bar">
+    <div class="sticky-bar" id="sticky-bar" role="complementary" aria-label="Quick action bar">
         <div class="sticky-bar-inner">
             <span class="sticky-text">Ready to fix your credit?</span>
             <a href="#books" class="btn btn-primary btn-small">View Books</a>
@@ -479,13 +621,14 @@
     </div>
     
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <p class="footer-copyright">© <span id="current-year">2025</span> Eric Coste. All rights reserved.</p>
             <a href="https://payhip.com/ERICCOSTE" class="footer-link" target="_blank" rel="noopener noreferrer">Visit my Payhip store</a>
         </div>
     </footer>
     
-    <script src="credit-hub.js"></script>
+    <!-- Deferred JavaScript -->
+    <script src="credit-hub.js" defer></script>
 </body>
 </html>

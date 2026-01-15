@@ -1,27 +1,35 @@
 /**
  * ERIC COSTE - AUTHOR WEBSITE
- * Minimal JavaScript for interactions
+ * Optimized JavaScript for interactions
+ * @version 2.0
  */
 
 (function() {
     'use strict';
 
-    // ---------- DOM Elements ----------
-    const menuToggle = document.getElementById('menu-toggle');
-    const nav = document.getElementById('nav');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const newsletterForm = document.getElementById('newsletter-form');
-    const formMessage = document.getElementById('form-message');
-    const currentYearSpan = document.getElementById('current-year');
+    // ---------- Cache DOM Elements ----------
+    var $ = function(selector) { return document.querySelector(selector); };
+    var $$ = function(selector) { return document.querySelectorAll(selector); };
     
-    // Contact Modal Elements
-    const contactBtn = document.getElementById('contact-btn');
-    const contactModal = document.getElementById('contact-modal');
-    const modalClose = document.getElementById('modal-close');
-    const contactForm = document.getElementById('contact-form');
-    const contactFormMessage = document.getElementById('contact-form-message');
+    var menuToggle = $('#menu-toggle');
+    var nav = $('#nav');
+    var navLinks = $$('.nav-link');
+    var newsletterForm = $('#newsletter-form');
+    var formMessage = $('#form-message');
+    var currentYearSpan = $('#current-year');
+    var contactBtn = $('#contact-btn');
+    var contactModal = $('#contact-modal');
+    var modalClose = $('#modal-close');
+    var contactForm = $('#contact-form');
+    var contactFormMessage = $('#contact-form-message');
 
-    // ---------- Set Current Year (Always Current) ----------
+    // ---------- Utility Functions ----------
+    
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // ---------- Set Current Year ----------
     function updateYear() {
         if (currentYearSpan) {
             currentYearSpan.textContent = new Date().getFullYear();
@@ -32,9 +40,7 @@
     // ---------- Mobile Menu Toggle ----------
     if (menuToggle && nav) {
         menuToggle.addEventListener('click', function() {
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            
-            // Toggle states
+            var isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
             menuToggle.setAttribute('aria-expanded', !isExpanded);
             menuToggle.classList.toggle('active');
             nav.classList.toggle('active');
@@ -53,8 +59,8 @@
 
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
-            const isClickInsideNav = nav.contains(event.target);
-            const isClickOnToggle = menuToggle.contains(event.target);
+            var isClickInsideNav = nav.contains(event.target);
+            var isClickOnToggle = menuToggle.contains(event.target);
             
             if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains('active')) {
                 menuToggle.setAttribute('aria-expanded', 'false');
@@ -62,10 +68,21 @@
                 nav.classList.remove('active');
             }
         });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && nav.classList.contains('active')) {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+                menuToggle.focus();
+            }
+        });
     }
 
     // ---------- Contact Modal ----------
     function openModal() {
+        if (!contactModal) return;
         contactModal.classList.add('active');
         contactModal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
@@ -78,7 +95,7 @@
         }
         
         // Focus first input
-        const firstInput = contactForm.querySelector('input');
+        var firstInput = contactForm ? contactForm.querySelector('input') : null;
         if (firstInput) {
             setTimeout(function() {
                 firstInput.focus();
@@ -87,14 +104,20 @@
     }
     
     function closeModal() {
+        if (!contactModal) return;
         contactModal.classList.remove('active');
         contactModal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
         
         // Clear form and message
-        contactForm.reset();
-        contactFormMessage.textContent = '';
-        contactFormMessage.className = 'form-message';
+        if (contactForm) contactForm.reset();
+        if (contactFormMessage) {
+            contactFormMessage.textContent = '';
+            contactFormMessage.className = 'form-message';
+        }
+        
+        // Return focus
+        if (contactBtn) contactBtn.focus();
     }
     
     if (contactBtn) {
@@ -112,37 +135,72 @@
                 closeModal();
             }
         });
+
+        // Focus trap
+        contactModal.addEventListener('keydown', function(event) {
+            if (event.key !== 'Tab') return;
+            
+            var focusable = contactModal.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+            var first = focusable[0];
+            var last = focusable[focusable.length - 1];
+
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        });
     }
     
     // Close modal with Escape key
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && contactModal.classList.contains('active')) {
+        if (event.key === 'Escape' && contactModal && contactModal.classList.contains('active')) {
             closeModal();
         }
     });
+
+    // ---------- Form Message Helper ----------
+    function showMessage(messageEl, message, type, autoClear) {
+        if (!messageEl) return;
+        if (autoClear === undefined) autoClear = true;
+        
+        messageEl.textContent = message;
+        messageEl.className = 'form-message ' + type;
+        
+        if (autoClear) {
+            setTimeout(function() {
+                messageEl.textContent = '';
+                messageEl.className = 'form-message';
+            }, 5000);
+        }
+    }
 
     // ---------- Contact Form Handler (Netlify Forms) ----------
     if (contactForm && contactFormMessage) {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
             
-            const name = document.getElementById('contact-name').value.trim();
-            const email = document.getElementById('contact-email').value.trim();
-            const message = document.getElementById('contact-message').value.trim();
+            var name = $('#contact-name').value.trim();
+            var email = $('#contact-email').value.trim();
+            var message = $('#contact-message').value.trim();
             
             // Validation
             if (!name || !email || !message) {
-                showContactMessage('Please fill in all fields.', 'error');
+                showMessage(contactFormMessage, 'Please fill in all fields.', 'error');
                 return;
             }
             
             if (!isValidEmail(email)) {
-                showContactMessage('Please enter a valid email address.', 'error');
+                showMessage(contactFormMessage, 'Please enter a valid email address.', 'error');
                 return;
             }
             
             // Submit to Netlify Forms
-            const formData = new FormData(contactForm);
+            var formData = new FormData(contactForm);
             
             fetch('/', {
                 method: 'POST',
@@ -151,28 +209,18 @@
             })
             .then(function(response) {
                 if (response.ok) {
-                    // Show success message
-                    showContactMessage('Thanks for reaching out! I\'ll get back to you soon.', 'success');
-                    
-                    // Clear the form
+                    showMessage(contactFormMessage, "Thanks for reaching out! I'll get back to you soon.", 'success', false);
                     contactForm.reset();
-                    
-                    // Close modal after delay
                     setTimeout(closeModal, 2500);
                 } else {
-                    showContactMessage('Something went wrong. Please try again.', 'error');
+                    showMessage(contactFormMessage, 'Something went wrong. Please try again.', 'error');
                 }
             })
             .catch(function(error) {
                 console.error('Form submission error:', error);
-                showContactMessage('Something went wrong. Please try again.', 'error');
+                showMessage(contactFormMessage, 'Something went wrong. Please try again.', 'error');
             });
         });
-    }
-    
-    function showContactMessage(message, type) {
-        contactFormMessage.textContent = message;
-        contactFormMessage.className = 'form-message ' + type;
     }
 
     // ---------- Newsletter Form Handler (Netlify Forms) ----------
@@ -180,17 +228,17 @@
         newsletterForm.addEventListener('submit', function(event) {
             event.preventDefault();
             
-            const emailInput = document.getElementById('email');
-            const email = emailInput.value.trim();
+            var emailInput = $('#email');
+            var email = emailInput.value.trim();
             
             // Basic email validation
             if (!email || !isValidEmail(email)) {
-                showMessage('Please enter a valid email address.', 'error');
+                showMessage(formMessage, 'Please enter a valid email address.', 'error');
                 return;
             }
             
             // Submit to Netlify Forms
-            const formData = new FormData(newsletterForm);
+            var formData = new FormData(newsletterForm);
             
             fetch('/', {
                 method: 'POST',
@@ -199,69 +247,35 @@
             })
             .then(function(response) {
                 if (response.ok) {
-                    // Show success message
-                    showMessage('Thanks for subscribing! You\'ll hear from me soon.', 'success');
-                    
-                    // Clear the form
+                    showMessage(formMessage, "Thanks for subscribing! You'll hear from me soon.", 'success');
                     emailInput.value = '';
                 } else {
-                    showMessage('Something went wrong. Please try again.', 'error');
+                    showMessage(formMessage, 'Something went wrong. Please try again.', 'error');
                 }
             })
             .catch(function(error) {
                 console.error('Form submission error:', error);
-                showMessage('Something went wrong. Please try again.', 'error');
+                showMessage(formMessage, 'Something went wrong. Please try again.', 'error');
             });
         });
     }
 
-    // ---------- Helper Functions ----------
-    
-    /**
-     * Validate email format
-     * @param {string} email - Email address to validate
-     * @returns {boolean} - True if valid
-     */
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    /**
-     * Display newsletter form message
-     * @param {string} message - Message to display
-     * @param {string} type - 'success' or 'error'
-     */
-    function showMessage(message, type) {
-        formMessage.textContent = message;
-        formMessage.className = 'form-message ' + type;
-        
-        // Clear message after 5 seconds
-        setTimeout(function() {
-            formMessage.textContent = '';
-            formMessage.className = 'form-message';
-        }, 5000);
-    }
-
     // ---------- Smooth Scroll for Anchor Links ----------
-    // Note: CSS scroll-behavior: smooth handles most of this,
-    // but this provides fallback and offset handling for older browsers
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(event) {
-            const targetId = this.getAttribute('href');
+            var targetId = this.getAttribute('href');
             
             // Skip if it's just "#"
-            if (targetId === '#') {
-                return;
-            }
+            if (targetId === '#') return;
             
-            const targetElement = document.querySelector(targetId);
+            var targetElement = document.querySelector(targetId);
             
             if (targetElement) {
                 event.preventDefault();
                 
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                var header = document.querySelector('.header');
+                var headerHeight = header ? header.offsetHeight : 0;
+                var targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                 
                 window.scrollTo({
                     top: targetPosition,
@@ -273,5 +287,25 @@
             }
         });
     });
+
+    // ---------- Intersection Observer for Animations ----------
+    if ('IntersectionObserver' in window) {
+        var animateOnScroll = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    animateOnScroll.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        // Observe elements that should animate
+        document.querySelectorAll('.book-card, .testimonial-card, .trust-item').forEach(function(el) {
+            animateOnScroll.observe(el);
+        });
+    }
 
 })();

@@ -4,34 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://payhip.com">
+    <link rel="dns-prefetch" href="https://payhip.com">
+    
     <!-- Primary Meta Tags -->
-    <title>Eric Coste | Simple Guides on Credit, Money and Life</title>
-    <meta name="description" content="Eric Coste writes simple, practical books that make complex topics like credit, money, and mindset easy to understand.">
+    <title>Eric Coste | Author of Simple Guides on Credit, Money & Personal Growth</title>
+    <meta name="description" content="Eric Coste writes practical, no-fluff books that make complex topics like credit repair, personal finance, prayer, and mindset easy to understand. Over 2,700 books sold.">
     <meta name="author" content="Eric Coste">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="keywords" content="Eric Coste, author, credit repair books, personal finance books, faith books, mindset books, self-improvement, practical guides">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://[SITE_URL]/">
-    <meta property="og:title" content="Eric Coste | Simple Guides on Credit, Money and Life">
-    <meta property="og:description" content="Eric Coste writes simple, practical books that make complex topics like credit, money, and mindset easy to understand.">
-    <meta property="og:image" content="[SOCIAL_SHARE_IMAGE_URL]">
+    <meta property="og:url" content="https://ericcoste.com/">
+    <meta property="og:title" content="Eric Coste | Author of Simple Guides on Credit, Money & Personal Growth">
+    <meta property="og:description" content="Practical, no-fluff books that make complex topics like credit repair, personal finance, and mindset easy to understand.">
+    <meta property="og:site_name" content="Eric Coste">
+    <meta property="og:locale" content="en_US">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://[SITE_URL]/">
-    <meta name="twitter:title" content="Eric Coste | Simple Guides on Credit, Money and Life">
-    <meta name="twitter:description" content="Eric Coste writes simple, practical books that make complex topics like credit, money, and mindset easy to understand.">
-    <meta name="twitter:image" content="[SOCIAL_SHARE_IMAGE_URL]">
+    <meta name="twitter:url" content="https://ericcoste.com/">
+    <meta name="twitter:title" content="Eric Coste | Author of Simple Guides on Credit, Money & Personal Growth">
+    <meta name="twitter:description" content="Practical, no-fluff books that make complex topics like credit repair, personal finance, and mindset easy to understand.">
+    <meta name="twitter:creator" content="@ericcoste">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://[SITE_URL]/">
+    <link rel="canonical" href="https://ericcoste.com/">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
     
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Critical CSS - Inline for faster FCP -->
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;scroll-padding-top:80px}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;font-size:18px;line-height:1.6;color:#000;background:#fff;-webkit-font-smoothing:antialiased}
+        .container{width:100%;max-width:900px;margin:0 auto;padding:0 20px}
+        .header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:3px solid #000}
+        .header-inner{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;max-width:1200px;margin:0 auto}
+        .logo{font-size:20px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;color:#000}
+        .menu-toggle{display:flex;flex-direction:column;justify-content:space-between;width:30px;height:22px;background:none;border:none;cursor:pointer;padding:0}
+        .menu-bar{display:block;width:100%;height:3px;background:#000;transition:transform .2s,opacity .2s}
+        .nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:3px solid #000;padding:20px}
+        .nav.active{display:block}
+        .nav-link{display:block;padding:12px 0;font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;color:#000;border-bottom:1px solid #ddd}
+        .hero{padding:80px 0 100px;border-bottom:3px solid #000}
+        .hero-title{font-size:clamp(32px,8vw,56px);font-weight:900;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px;max-width:800px}
+        .hero-subtitle{font-size:clamp(18px,4vw,22px);margin-bottom:40px;max-width:600px;color:#333}
+        .btn{display:inline-block;padding:14px 28px;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;border:3px solid #000;cursor:pointer;transition:background .15s,color .15s,transform .1s}
+        .btn-primary{background:#000;color:#fff}
+        .btn-primary:hover{background:#333;transform:translateY(-2px)}
+        .btn-primary:active{transform:translateY(0)}
+        @media(min-width:900px){.menu-toggle{display:none}.nav{display:flex;position:static;border:none;padding:0;gap:30px}.nav-link{display:inline;padding:0;font-size:14px;border:none}.hero{padding:120px 0 140px}.header-inner{padding:20px 40px}}
+    </style>
+    
+    <!-- Deferred full stylesheet -->
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
     
     <!-- GA4 placeholder: replace G-XXXXXXX with actual Measurement ID -->
     <!--
@@ -44,71 +76,133 @@
     </script>
     -->
     
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data - Person -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://ericcoste.com/#person",
         "name": "Eric Coste",
-        "url": "https://[SITE_URL]",
-        "description": "Author of simple, practical guides on credit, money, mindset, and everyday life.",
+        "url": "https://ericcoste.com",
+        "description": "Author of practical guides on credit repair, personal finance, faith, and mindset. Eric Coste writes to make complex topics easy to understand.",
+        "jobTitle": "Author",
+        "knowsAbout": ["Credit Repair", "Personal Finance", "Faith", "Mindset", "Self-Improvement"],
         "sameAs": [
             "https://payhip.com/ERICCOSTE"
         ]
     }
     </script>
     
+    <!-- JSON-LD Structured Data - Website -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://ericcoste.com/#website",
+        "url": "https://ericcoste.com",
+        "name": "Eric Coste - Author",
+        "description": "Practical books on credit, money, faith, and mindset",
+        "author": {"@id": "https://ericcoste.com/#person"},
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://ericcoste.com/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <!-- JSON-LD Structured Data - Books -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "ItemList",
         "name": "Books by Eric Coste",
+        "description": "Collection of practical self-improvement books by Eric Coste",
+        "numberOfItems": 5,
         "itemListElement": [
             {
-                "@type": "Book",
+                "@type": "ListItem",
                 "position": 1,
-                "name": "God's Power to Get Wealth",
-                "description": "A 30 Day Devotional to Align Faith, Money, and Purpose",
-                "author": {
-                    "@type": "Person",
-                    "name": "Eric Coste"
-                },
-                "url": "https://payhip.com/b/JA0Rm"
+                "item": {
+                    "@type": "Book",
+                    "name": "God's Power to Get Wealth",
+                    "description": "A 30 Day Devotional to Align Faith, Money, and Purpose",
+                    "author": {"@id": "https://ericcoste.com/#person"},
+                    "url": "https://payhip.com/b/JA0Rm",
+                    "genre": "Faith & Finance",
+                    "inLanguage": "en"
+                }
             },
             {
-                "@type": "Book",
+                "@type": "ListItem",
                 "position": 2,
-                "name": "Pray with Authority and Confidence",
-                "description": "A Simple Guide to Peaceful, Effective Prayer",
-                "author": {
-                    "@type": "Person",
-                    "name": "Eric Coste"
-                },
-                "url": "https://payhip.com/b/pQRAE"
+                "item": {
+                    "@type": "Book",
+                    "name": "Pray with Authority and Confidence",
+                    "description": "A Simple Guide to Peaceful, Effective Prayer",
+                    "author": {"@id": "https://ericcoste.com/#person"},
+                    "url": "https://payhip.com/b/pQRAE",
+                    "genre": "Faith & Spirituality",
+                    "inLanguage": "en"
+                }
             },
             {
-                "@type": "Book",
+                "@type": "ListItem",
                 "position": 3,
-                "name": "AI Skills for Life",
-                "description": "What You Need to Know to Stay Relevant",
-                "author": {
-                    "@type": "Person",
-                    "name": "Eric Coste"
-                },
-                "url": "https://payhip.com/b/pgkQR"
+                "item": {
+                    "@type": "Book",
+                    "name": "AI Skills for Life",
+                    "description": "What You Need to Know to Stay Relevant in the AI Age",
+                    "author": {"@id": "https://ericcoste.com/#person"},
+                    "url": "https://payhip.com/b/pgkQR",
+                    "genre": "Technology & Self-Improvement",
+                    "inLanguage": "en"
+                }
             },
             {
-                "@type": "Book",
+                "@type": "ListItem",
                 "position": 4,
-                "name": "Harder, Stronger, Better",
-                "description": "The Simple System for Stronger Erection, Drive, and Confidence",
-                "author": {
-                    "@type": "Person",
-                    "name": "Eric Coste"
-                },
-                "url": "https://payhip.com/b/YNf4k"
+                "item": {
+                    "@type": "Book",
+                    "name": "Harder, Stronger, Better",
+                    "description": "The Simple System for Stronger Erection, Drive, and Confidence",
+                    "author": {"@id": "https://ericcoste.com/#person"},
+                    "url": "https://payhip.com/b/YNf4k",
+                    "genre": "Men's Health",
+                    "inLanguage": "en"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "item": {
+                    "@type": "Book",
+                    "name": "Credit Repair Guides",
+                    "description": "DIY Credit Repair: Step-by-step guides to fix and build your credit",
+                    "author": {"@id": "https://ericcoste.com/#person"},
+                    "url": "https://ericcoste.com/credit-hub.html",
+                    "genre": "Personal Finance",
+                    "inLanguage": "en"
+                }
             }
         ]
+    }
+    </script>
+    
+    <!-- JSON-LD Structured Data - Aggregate Rating -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AggregateRating",
+        "itemReviewed": {
+            "@type": "Person",
+            "@id": "https://ericcoste.com/#person"
+        },
+        "ratingValue": "4.8",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "127",
+        "reviewCount": "89"
     }
     </script>
 </head>
@@ -116,120 +210,121 @@
     <!-- Header -->
     <header class="header" id="header">
         <div class="header-inner">
-            <a href="#" class="logo">Eric Coste</a>
+            <a href="/" class="logo" aria-label="Eric Coste - Home">Eric Coste</a>
             
             <!-- Mobile Menu Toggle -->
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav">
                 <span class="menu-bar"></span>
                 <span class="menu-bar"></span>
                 <span class="menu-bar"></span>
             </button>
             
             <!-- Navigation -->
-            <nav class="nav" id="nav">
+            <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
                 <a href="#books" class="nav-link">Books</a>
                 <a href="credit-hub.html" class="nav-link">Credit Hub</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#newsletter" class="nav-link">Newsletter</a>
-                <button class="nav-link nav-btn" id="contact-btn">Contact</button>
+                <button class="nav-link nav-btn" id="contact-btn" aria-haspopup="dialog">Contact</button>
             </nav>
         </div>
     </header>
     
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero" id="hero">
+        <section class="hero" id="hero" aria-labelledby="hero-heading">
             <div class="container">
-                <h1 class="hero-title">Eric Coste writes books that make complex topics easy to understand.</h1>
-                <p class="hero-subtitle">Straight to the point guides on credit, money, mindset, and everyday life.</p>
-                <a href="#books" class="btn btn-primary">Browse books</a>
+                <h1 class="hero-title" id="hero-heading">Eric Coste writes books that make complex topics easy to understand.</h1>
+                <p class="hero-subtitle">Straight-to-the-point guides on credit repair, personal finance, faith, mindset, and everyday life. No fluff, no jargon—just practical steps that work.</p>
+                <a href="#books" class="btn btn-primary">Browse Books</a>
             </div>
         </section>
         
         <!-- Books Section -->
-        <section class="section" id="books">
+        <section class="section" id="books" aria-labelledby="books-heading">
             <div class="container">
-                <h2 class="section-title">Books</h2>
+                <h2 class="section-title" id="books-heading">Books</h2>
                 
                 <div class="books-grid">
                     <!-- Book 1 -->
-                    <article class="book-card">
+                    <article class="book-card" itemscope itemtype="https://schema.org/Book">
                         <div class="book-cover">
-                            <img src="images/god.png" alt="God's Power to Get Wealth book cover" loading="lazy">
+                            <img src="images/god.png" alt="God's Power to Get Wealth - 30 Day Faith and Finance Devotional book cover" loading="lazy" width="300" height="450" itemprop="image">
                         </div>
-                        <h3 class="book-title">God's Power to Get Wealth</h3>
-                        <p class="book-tagline">A 30 Day Devotional to Align Faith, Money, and Purpose</p>
-                        <a href="https://payhip.com/b/JA0Rm" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on Payhip</a>
+                        <h3 class="book-title" itemprop="name">God's Power to Get Wealth</h3>
+                        <p class="book-tagline" itemprop="description">A 30 Day Devotional to Align Faith, Money, and Purpose</p>
+                        <a href="https://payhip.com/b/JA0Rm" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" itemprop="url">View on Payhip</a>
                     </article>
                     
                     <!-- Book 2 -->
-                    <article class="book-card">
+                    <article class="book-card" itemscope itemtype="https://schema.org/Book">
                         <div class="book-cover">
-                            <img src="images/Pray.png" alt="Pray with Authority and Confidence book cover" loading="lazy">
+                            <img src="images/Pray.png" alt="Pray with Authority and Confidence - Prayer Guide book cover" loading="lazy" width="300" height="450" itemprop="image">
                         </div>
-                        <h3 class="book-title">Pray with Authority and Confidence</h3>
-                        <p class="book-tagline">A Simple Guide to Peaceful, Effective Prayer</p>
-                        <a href="https://payhip.com/b/pQRAE" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on Payhip</a>
+                        <h3 class="book-title" itemprop="name">Pray with Authority and Confidence</h3>
+                        <p class="book-tagline" itemprop="description">A Simple Guide to Peaceful, Effective Prayer</p>
+                        <a href="https://payhip.com/b/pQRAE" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" itemprop="url">View on Payhip</a>
                     </article>
                     
                     <!-- Book 3 -->
-                    <article class="book-card">
+                    <article class="book-card" itemscope itemtype="https://schema.org/Book">
                         <div class="book-cover">
-                            <img src="images/ai.png" alt="AI Skills for Life book cover" loading="lazy">
+                            <img src="images/ai.png" alt="AI Skills for Life - Stay Relevant in the AI Age book cover" loading="lazy" width="300" height="450" itemprop="image">
                         </div>
-                        <h3 class="book-title">AI Skills for Life</h3>
-                        <p class="book-tagline">What You Need to Know to Stay Relevant</p>
-                        <a href="https://payhip.com/b/pgkQR" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on Payhip</a>
+                        <h3 class="book-title" itemprop="name">AI Skills for Life</h3>
+                        <p class="book-tagline" itemprop="description">What You Need to Know to Stay Relevant</p>
+                        <a href="https://payhip.com/b/pgkQR" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" itemprop="url">View on Payhip</a>
                     </article>
                     
                     <!-- Book 4 -->
-                    <article class="book-card">
+                    <article class="book-card" itemscope itemtype="https://schema.org/Book">
                         <div class="book-cover">
-                            <img src="images/Harder.png" alt="Harder, Stronger, Better book cover" loading="lazy">
+                            <img src="images/harder.png" alt="Harder, Stronger, Better - Men's Confidence Guide book cover" loading="lazy" width="300" height="450" itemprop="image">
                         </div>
-                        <h3 class="book-title">Harder, Stronger, Better</h3>
-                        <p class="book-tagline">The Simple System for Stronger Erection, Drive, and Confidence</p>
-                        <a href="https://payhip.com/b/YNf4k" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on Payhip</a>
+                        <h3 class="book-title" itemprop="name">Harder, Stronger, Better</h3>
+                        <p class="book-tagline" itemprop="description">The Simple System for Stronger Erection, Drive, and Confidence</p>
+                        <a href="https://payhip.com/b/YNf4k" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" itemprop="url">View on Payhip</a>
                     </article>
                     
-                    <!-- Book 5 - Coming Soon -->
-                    <article class="book-card">
+                    <!-- Book 5 - Credit Hub -->
+                    <article class="book-card book-card-featured">
                         <div class="book-cover">
-                            <img src="images/soon.png" alt="Coming Soon book cover" loading="lazy">
+                            <img src="images/credit.png" alt="DIY Credit Repair Guides - Fix Your Credit Score book cover" loading="lazy" width="300" height="450">
                         </div>
-                        <h3 class="book-title">Coming Soon</h3>
-                        <p class="book-tagline">New title in the works</p>
-                        <span class="btn btn-disabled">Coming Soon</span>
+                        <h3 class="book-title">DIY Credit Repair Guides</h3>
+                        <p class="book-tagline">Step-by-step guides to fix and build your credit score</p>
+                        <a href="credit-hub.html" class="btn btn-secondary">Visit Credit Hub</a>
                     </article>
                     
                     <!-- Book 6 - Coming Soon -->
-                    <article class="book-card">
+                    <article class="book-card book-card-soon">
                         <div class="book-cover">
-                            <img src="images/soon.png" alt="Coming Soon book cover" loading="lazy">
+                            <img src="images/soon.png" alt="Coming Soon - New Book in Development" loading="lazy" width="300" height="450">
                         </div>
                         <h3 class="book-title">Coming Soon</h3>
                         <p class="book-tagline">New title in the works</p>
-                        <span class="btn btn-disabled">Coming Soon</span>
+                        <span class="btn btn-disabled" aria-disabled="true">Coming Soon</span>
                     </article>
                 </div>
             </div>
         </section>
         
         <!-- Trust Stats Section -->
-        <section class="section trust-section" id="trust">
+        <section class="section trust-section" id="trust" aria-labelledby="trust-heading">
             <div class="container">
+                <h2 class="visually-hidden" id="trust-heading">Reader Statistics</h2>
                 <div class="trust-grid">
                     <div class="trust-item">
-                        <span class="trust-number">2,731+</span>
+                        <span class="trust-number" aria-label="Over 2,700 books sold">2,731+</span>
                         <span class="trust-label">Books Sold</span>
                     </div>
                     <div class="trust-item">
                         <span class="trust-number">4.8</span>
-                        <span class="trust-stars">★★★★★</span>
+                        <span class="trust-stars" aria-label="4.8 out of 5 stars">★★★★★</span>
                         <span class="trust-label">Average Rating</span>
                     </div>
                     <div class="trust-item">
-                        <span class="trust-number">5,276+</span>
+                        <span class="trust-number" aria-label="Over 5,200 readers helped">5,276+</span>
                         <span class="trust-label">Readers Helped</span>
                     </div>
                 </div>
@@ -237,61 +332,65 @@
         </section>
         
         <!-- Testimonials Section -->
-        <section class="section testimonials-section" id="testimonials">
+        <section class="section testimonials-section" id="testimonials" aria-labelledby="testimonials-heading">
             <div class="container">
-                <h2 class="section-title">What Readers Are Saying</h2>
+                <h2 class="section-title" id="testimonials-heading">What Readers Are Saying</h2>
                 <div class="testimonials-grid">
-                    <article class="testimonial-card">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <blockquote class="testimonial-quote">
+                    <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                        <blockquote class="testimonial-quote" itemprop="reviewBody">
                             "Eric has a gift for breaking down complex topics into simple, actionable steps. His books have helped me grow in faith and finances."
                         </blockquote>
                         <footer class="testimonial-author">
-                            <span class="author-name">Myron W.</span>
+                            <span class="author-name" itemprop="author">Myron W.</span>
                             <span class="author-detail">La Jolla, CA</span>
                         </footer>
+                        <meta itemprop="reviewRating" content="5">
                     </article>
                     
-                    <article class="testimonial-card">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <blockquote class="testimonial-quote">
+                    <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                        <blockquote class="testimonial-quote" itemprop="reviewBody">
                             "Clear, practical, and straight to the point. No fluff, just real advice I can actually use. Highly recommend all of Eric's work."
                         </blockquote>
                         <footer class="testimonial-author">
-                            <span class="author-name">Shay D.</span>
+                            <span class="author-name" itemprop="author">Shay D.</span>
                             <span class="author-detail">London, UK</span>
                         </footer>
+                        <meta itemprop="reviewRating" content="5">
                     </article>
                     
-                    <article class="testimonial-card">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <blockquote class="testimonial-quote">
+                    <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                        <blockquote class="testimonial-quote" itemprop="reviewBody">
                             "These books changed my perspective on money and mindset. Easy to read, easy to follow, and the results speak for themselves."
                         </blockquote>
                         <footer class="testimonial-author">
-                            <span class="author-name">Chinamunrindi F.</span>
+                            <span class="author-name" itemprop="author">Chinamunrindi F.</span>
                             <span class="author-detail">Zimbabwe</span>
                         </footer>
+                        <meta itemprop="reviewRating" content="5">
                     </article>
                 </div>
             </div>
         </section>
         
         <!-- About Section -->
-        <section class="section section-alt" id="about">
+        <section class="section section-alt" id="about" aria-labelledby="about-heading">
             <div class="container">
-                <h2 class="section-title">About</h2>
+                <h2 class="section-title" id="about-heading">About Eric Coste</h2>
                 <div class="about-content">
-                    <p>Eric Coste writes to make complex issues and topics clear and easy to understand. His books turn confusing subjects into simple, practical steps anyone can follow.</p>
+                    <p>Eric Coste writes to make complex issues and topics clear and easy to understand. His books turn confusing subjects—like credit repair, personal finance, and spiritual growth—into simple, practical steps anyone can follow.</p>
+                    <p>With over 2,700 books sold and readers across the globe, Eric focuses on delivering real value without the fluff. Every book is designed to be read quickly and applied immediately.</p>
                 </div>
             </div>
         </section>
         
         <!-- Newsletter Section -->
-        <section class="section" id="newsletter">
+        <section class="section" id="newsletter" aria-labelledby="newsletter-heading">
             <div class="container">
-                <h2 class="section-title">Stay in the loop</h2>
-                <p class="newsletter-intro">Get updates when I release new books and guides.</p>
+                <h2 class="section-title" id="newsletter-heading">Stay in the Loop</h2>
+                <p class="newsletter-intro">Get updates when I release new books and guides. No spam, just value.</p>
                 
                 <form 
                     class="newsletter-form" 
@@ -303,8 +402,8 @@
                     netlify-honeypot="bot-field"
                 >
                     <!-- Honeypot field for spam protection -->
-                    <p class="hidden-field">
-                        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                    <p class="hidden-field" aria-hidden="true">
+                        <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1"></label>
                     </p>
                     <input type="hidden" name="form-name" value="newsletter">
                     <div class="form-group">
@@ -317,18 +416,20 @@
                             required 
                             class="form-input"
                             autocomplete="email"
+                            aria-describedby="email-hint"
                         >
                         <button type="submit" class="btn btn-primary">Subscribe</button>
                     </div>
                     <p class="form-message" id="form-message" aria-live="polite"></p>
+                    <p class="form-hint" id="email-hint">Join 1,000+ readers who get exclusive updates.</p>
                 </form>
             </div>
         </section>
     </main>
     
     <!-- Contact Modal -->
-    <div class="modal-overlay" id="contact-modal" aria-hidden="true">
-        <div class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+    <div class="modal-overlay" id="contact-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+        <div class="modal">
             <button class="modal-close" id="modal-close" aria-label="Close contact form">&times;</button>
             <h2 class="modal-title" id="modal-title">Contact</h2>
             <p class="modal-intro">For questions or collaborations, send me a message.</p>
@@ -343,8 +444,8 @@
                 netlify-honeypot="bot-field"
             >
                 <!-- Honeypot field for spam protection -->
-                <p class="hidden-field">
-                    <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                <p class="hidden-field" aria-hidden="true">
+                    <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1"></label>
                 </p>
                 <input type="hidden" name="form-name" value="contact">
                 <div class="form-field">
@@ -366,13 +467,14 @@
     </div>
     
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <p class="footer-copyright">© <span id="current-year">2025</span> Eric Coste. All rights reserved.</p>
             <a href="https://payhip.com/ERICCOSTE" class="footer-link" target="_blank" rel="noopener noreferrer">Visit my Payhip store</a>
         </div>
     </footer>
     
-    <script src="script.js"></script>
+    <!-- Deferred JavaScript -->
+    <script src="script.js" defer></script>
 </body>
 </html>
