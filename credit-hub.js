@@ -13,6 +13,13 @@
     const leadForm = document.getElementById('lead-form');
     const leadFormMessage = document.getElementById('lead-form-message');
     const currentYearSpan = document.getElementById('current-year');
+    
+    // Free Guide Modal Elements
+    const freeGuideBtn = document.getElementById('free-guide-btn');
+    const freeGuideModal = document.getElementById('free-guide-modal');
+    const freeGuideModalClose = document.getElementById('free-guide-modal-close');
+    const freeGuideForm = document.getElementById('free-guide-form');
+    const freeGuideFormMessage = document.getElementById('free-guide-form-message');
 
     // ---------- Set Current Year ----------
     function updateYear() {
@@ -21,6 +28,114 @@
         }
     }
     updateYear();
+
+    // ---------- Free Guide Modal ----------
+    function openFreeGuideModal() {
+        if (freeGuideModal) {
+            freeGuideModal.classList.add('active');
+            freeGuideModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            
+            // Focus email input
+            const emailInput = document.getElementById('free-guide-email');
+            if (emailInput) {
+                setTimeout(function() {
+                    emailInput.focus();
+                }, 100);
+            }
+        }
+    }
+    
+    function closeFreeGuideModal() {
+        if (freeGuideModal) {
+            freeGuideModal.classList.remove('active');
+            freeGuideModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            
+            // Clear form and message
+            if (freeGuideForm) {
+                freeGuideForm.reset();
+            }
+            if (freeGuideFormMessage) {
+                freeGuideFormMessage.textContent = '';
+                freeGuideFormMessage.className = 'form-message';
+            }
+        }
+    }
+    
+    // Open modal when "Get It Free" button is clicked
+    if (freeGuideBtn) {
+        freeGuideBtn.addEventListener('click', openFreeGuideModal);
+    }
+    
+    // Close modal handlers
+    if (freeGuideModalClose) {
+        freeGuideModalClose.addEventListener('click', closeFreeGuideModal);
+    }
+    
+    if (freeGuideModal) {
+        freeGuideModal.addEventListener('click', function(event) {
+            if (event.target === freeGuideModal) {
+                closeFreeGuideModal();
+            }
+        });
+    }
+    
+    // Close with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && freeGuideModal && freeGuideModal.classList.contains('active')) {
+            closeFreeGuideModal();
+        }
+    });
+    
+    // Free Guide Form Submission
+    if (freeGuideForm && freeGuideFormMessage) {
+        freeGuideForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const emailInput = document.getElementById('free-guide-email');
+            const email = emailInput.value.trim();
+            
+            if (!email || !isValidEmail(email)) {
+                freeGuideFormMessage.textContent = 'Please enter a valid email address.';
+                freeGuideFormMessage.className = 'form-message error';
+                return;
+            }
+            
+            // Submit to Netlify Forms
+            const formData = new FormData(freeGuideForm);
+            
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(function(response) {
+                // Show success and open PDF
+                freeGuideFormMessage.textContent = 'Success! Opening your guide now...';
+                freeGuideFormMessage.className = 'form-message success';
+                emailInput.value = '';
+                
+                // Open PDF in new tab
+                setTimeout(function() {
+                    window.open('guide1-free.pdf', '_blank');
+                    closeFreeGuideModal();
+                }, 800);
+            })
+            .catch(function(error) {
+                // Still open PDF even on error
+                console.log('Form submission note:', error);
+                freeGuideFormMessage.textContent = 'Success! Opening your guide now...';
+                freeGuideFormMessage.className = 'form-message success';
+                emailInput.value = '';
+                
+                setTimeout(function() {
+                    window.open('guide1-free.pdf', '_blank');
+                    closeFreeGuideModal();
+                }, 800);
+            });
+        });
+    }
 
     // ---------- Sticky Bar Logic ----------
     // Show sticky bar after scrolling past hero
