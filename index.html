@@ -118,7 +118,7 @@
         "@type": "ItemList",
         "name": "Books by Eric Coste",
         "description": "Collection of practical self-improvement books by Eric Coste",
-        "numberOfItems": 5,
+        "numberOfItems": 6,
         "itemListElement": [
             {
                 "@type": "ListItem",
@@ -184,27 +184,24 @@
                     "genre": "Personal Finance",
                     "inLanguage": "en"
                 }
+            },
+            {
+                "@type": "ListItem",
+                "position": 6,
+                "item": {
+                    "@type": "Book",
+                    "name": "How to Make Your First $1000 Selling eBooks",
+                    "description": "A Step-by-Step Guide to Creating and Selling Digital Products",
+                    "author": {"@id": "https://ericcoste.com/#person"},
+                    "url": "https://payhip.com/b/Tf8eN",
+                    "genre": "Business & Entrepreneurship",
+                    "inLanguage": "en"
+                }
             }
         ]
     }
     </script>
     
-    <!-- JSON-LD Structured Data - Aggregate Rating -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "AggregateRating",
-        "itemReviewed": {
-            "@type": "Person",
-            "@id": "https://ericcoste.com/#person"
-        },
-        "ratingValue": "4.8",
-        "bestRating": "5",
-        "worstRating": "1",
-        "ratingCount": "127",
-        "reviewCount": "89"
-    }
-    </script>
 </head>
 <body>
     <!-- Header -->
@@ -296,7 +293,37 @@
                         <a href="credit-hub.html" class="btn btn-secondary">Visit Credit Hub</a>
                     </article>
                     
-                    <!-- Book 6 - Coming Soon -->
+                    <!-- Book 6 - Make Money with eBooks -->
+                    <article class="book-card" itemscope itemtype="https://schema.org/Book">
+                        <div class="book-cover">
+                            <img src="images/book.png" alt="How to Make Your First $1000 Selling eBooks guide cover" loading="lazy" width="300" height="450" itemprop="image">
+                        </div>
+                        <h3 class="book-title" itemprop="name">How to Make Your First $1000 Selling eBooks</h3>
+                        <p class="book-tagline" itemprop="description">A Step-by-Step Guide to Creating and Selling Digital Products</p>
+                        <a href="https://payhip.com/b/Tf8eN" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" itemprop="url">View on Payhip</a>
+                    </article>
+                    
+                    <!-- Book 7 - Coming Soon -->
+                    <article class="book-card book-card-soon">
+                        <div class="book-cover">
+                            <img src="images/soon.png" alt="Coming Soon - New Book in Development" loading="lazy" width="300" height="450">
+                        </div>
+                        <h3 class="book-title">Coming Soon</h3>
+                        <p class="book-tagline">New title in the works</p>
+                        <span class="btn btn-disabled" aria-disabled="true">Coming Soon</span>
+                    </article>
+                    
+                    <!-- Book 8 - Coming Soon -->
+                    <article class="book-card book-card-soon">
+                        <div class="book-cover">
+                            <img src="images/soon.png" alt="Coming Soon - New Book in Development" loading="lazy" width="300" height="450">
+                        </div>
+                        <h3 class="book-title">Coming Soon</h3>
+                        <p class="book-tagline">New title in the works</p>
+                        <span class="btn btn-disabled" aria-disabled="true">Coming Soon</span>
+                    </article>
+                    
+                    <!-- Book 9 - Coming Soon -->
                     <article class="book-card book-card-soon">
                         <div class="book-cover">
                             <img src="images/soon.png" alt="Coming Soon - New Book in Development" loading="lazy" width="300" height="450">
@@ -336,40 +363,37 @@
             <div class="container">
                 <h2 class="section-title" id="testimonials-heading">What Readers Are Saying</h2>
                 <div class="testimonials-grid">
-                    <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                    <article class="testimonial-card">
                         <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                        <blockquote class="testimonial-quote" itemprop="reviewBody">
+                        <blockquote class="testimonial-quote">
                             "Eric has a gift for breaking down complex topics into simple, actionable steps. His books have helped me grow in faith and finances."
                         </blockquote>
                         <footer class="testimonial-author">
-                            <span class="author-name" itemprop="author">Myron W.</span>
+                            <span class="author-name">Myron W.</span>
                             <span class="author-detail">La Jolla, CA</span>
                         </footer>
-                        <meta itemprop="reviewRating" content="5">
                     </article>
                     
-                    <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                    <article class="testimonial-card">
                         <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                        <blockquote class="testimonial-quote" itemprop="reviewBody">
+                        <blockquote class="testimonial-quote">
                             "Clear, practical, and straight to the point. No fluff, just real advice I can actually use. Highly recommend all of Eric's work."
                         </blockquote>
                         <footer class="testimonial-author">
-                            <span class="author-name" itemprop="author">Shay D.</span>
+                            <span class="author-name">Shay D.</span>
                             <span class="author-detail">London, UK</span>
                         </footer>
-                        <meta itemprop="reviewRating" content="5">
                     </article>
                     
-                    <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                    <article class="testimonial-card">
                         <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                        <blockquote class="testimonial-quote" itemprop="reviewBody">
+                        <blockquote class="testimonial-quote">
                             "These books changed my perspective on money and mindset. Easy to read, easy to follow, and the results speak for themselves."
                         </blockquote>
                         <footer class="testimonial-author">
-                            <span class="author-name" itemprop="author">Chinamunrindi F.</span>
+                            <span class="author-name">Chinamunrindi F.</span>
                             <span class="author-detail">Zimbabwe</span>
                         </footer>
-                        <meta itemprop="reviewRating" content="5">
                     </article>
                 </div>
             </div>
