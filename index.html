@@ -61,9 +61,8 @@
         @media(min-width:900px){.menu-toggle{display:none}.nav{display:flex;position:static;border:none;padding:0;gap:30px}.nav-link{display:inline;padding:0;font-size:14px;border:none}.hero{padding:120px 0 140px}.header-inner{padding:20px 40px}}
     </style>
     
-    <!-- Deferred full stylesheet -->
-    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
     
     <!-- GA4 placeholder: replace G-XXXXXXX with actual Measurement ID -->
     <!--
@@ -118,7 +117,7 @@
         "@type": "ItemList",
         "name": "Books by Eric Coste",
         "description": "Collection of practical self-improvement books by Eric Coste",
-        "numberOfItems": 7,
+        "numberOfItems": 8,
         "itemListElement": [
             {
                 "@type": "ListItem",
@@ -208,6 +207,19 @@
                     "author": {"@id": "https://ericcoste.com/#person"},
                     "url": "https://payhip.com/b/cEye1",
                     "genre": "Business & Entrepreneurship",
+                    "inLanguage": "en"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 8,
+                "item": {
+                    "@type": "Book",
+                    "name": "Buried in the Quiet",
+                    "description": "A Journey Through Silence and Self-Discovery",
+                    "author": {"@id": "https://ericcoste.com/#person"},
+                    "url": "https://payhip.com/b/GoEpJ",
+                    "genre": "Poetry & Memoir",
                     "inLanguage": "en"
                 }
             }
@@ -326,14 +338,14 @@
                         <a href="https://payhip.com/b/cEye1" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" itemprop="url">View on Payhip</a>
                     </article>
                     
-                    <!-- Book 8 - Coming Soon -->
-                    <article class="book-card book-card-soon">
+                    <!-- Book 8 - Buried in the Quiet -->
+                    <article class="book-card" itemscope itemtype="https://schema.org/Book">
                         <div class="book-cover">
-                            <img src="images/soon.png" alt="Coming Soon - New Book in Development" loading="lazy" width="300" height="450">
+                            <img src="images/buried.png" alt="Buried in the Quiet book cover" loading="lazy" width="300" height="450" itemprop="image">
                         </div>
-                        <h3 class="book-title">Coming Soon</h3>
-                        <p class="book-tagline">New title in the works</p>
-                        <span class="btn btn-disabled" aria-disabled="true">Coming Soon</span>
+                        <h3 class="book-title" itemprop="name">Buried in the Quiet</h3>
+                        <p class="book-tagline" itemprop="description">A Journey Through Silence and Self-Discovery</p>
+                        <a href="https://payhip.com/b/GoEpJ" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" itemprop="url">View on Payhip</a>
                     </article>
                     
                     <!-- Book 9 - Coming Soon -->
