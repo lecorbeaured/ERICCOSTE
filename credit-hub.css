@@ -201,6 +201,19 @@ a:hover {
     font-weight: 600;
 }
 
+.header-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.header-nav .back-link {
+    text-decoration: none;
+}
+
+.header-nav .back-link:hover {
+    text-decoration: underline;
+}
+
 /* ---------- Hero Section ---------- */
 .hero {
     padding: 80px 0 100px;
