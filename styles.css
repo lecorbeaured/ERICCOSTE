@@ -502,6 +502,55 @@ a:hover {
     line-height: 1.7;
 }
 
+/* ---------- FAQ Section ---------- */
+.faq-list {
+    max-width: 760px;
+}
+
+.faq-item {
+    border-bottom: 2px solid var(--color-border);
+    padding: 22px 0;
+}
+
+.faq-item:first-child {
+    border-top: 2px solid var(--color-border);
+}
+
+.faq-question {
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 24px;
+    font-weight: 400;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+
+.faq-item[open] .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-secondary);
+    max-width: 680px;
+}
+
 /* ---------- Newsletter Section ---------- */
 .newsletter-intro {
     font-size: 18px;

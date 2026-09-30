@@ -9,25 +9,30 @@
     <link rel="dns-prefetch" href="https://payhip.com">
     
     <!-- Primary Meta Tags -->
-    <title>Eric Coste | Author of Simple Guides on Credit, Money & Personal Growth</title>
-    <meta name="description" content="Eric Coste writes practical, no-fluff books that make complex topics like credit repair, personal finance, prayer, and mindset easy to understand. Over 2,700 books sold.">
+    <title>Eric Coste | Author of The Hidden Laws of Money</title>
+    <meta name="description" content="Eric Coste writes The Hidden Laws of Money—the rules that quietly decide who wins and who stays broke—plus no-fluff guides on credit repair, personal finance, faith, and mindset. Over 2,700 books sold.">
     <meta name="author" content="Eric Coste">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="keywords" content="Eric Coste, author, credit repair books, personal finance books, faith books, mindset books, self-improvement, practical guides">
-    
+    <meta name="keywords" content="Eric Coste, The Hidden Laws of Money, author, wealth rules, credit repair books, personal finance books, faith books, mindset books, self-improvement, practical guides">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ericcoste.com/">
-    <meta property="og:title" content="Eric Coste | Author of Simple Guides on Credit, Money & Personal Growth">
-    <meta property="og:description" content="Practical, no-fluff books that make complex topics like credit repair, personal finance, and mindset easy to understand.">
+    <meta property="og:title" content="Eric Coste | Author of The Hidden Laws of Money">
+    <meta property="og:description" content="The rules that quietly decide who wins and who stays broke—plus practical, no-fluff books on credit repair, personal finance, faith, and mindset.">
+    <meta property="og:image" content="https://ericcoste.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="The Hidden Laws of Money by Eric Coste, book cover with an antique brass key">
     <meta property="og:site_name" content="Eric Coste">
     <meta property="og:locale" content="en_US">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://ericcoste.com/">
-    <meta name="twitter:title" content="Eric Coste | Author of Simple Guides on Credit, Money & Personal Growth">
-    <meta name="twitter:description" content="Practical, no-fluff books that make complex topics like credit repair, personal finance, and mindset easy to understand.">
+    <meta name="twitter:title" content="Eric Coste | Author of The Hidden Laws of Money">
+    <meta name="twitter:description" content="The rules that quietly decide who wins and who stays broke—plus practical, no-fluff books on credit repair, personal finance, faith, and mindset.">
+    <meta name="twitter:image" content="https://ericcoste.com/og-image.jpg">
     <meta name="twitter:creator" content="@ericcoste">
 	
     <meta name="fo-verify" content="c715ee9e-ea0d-47a6-85b3-47489f0c9a60" />
@@ -77,50 +82,61 @@
     </script>
     -->
     
-    <!-- JSON-LD Structured Data - Person -->
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "@id": "https://ericcoste.com/#person",
-        "name": "Eric Coste",
-        "url": "https://ericcoste.com",
-        "description": "Author of practical guides on credit repair, personal finance, faith, and mindset. Eric Coste writes to make complex topics easy to understand.",
-        "jobTitle": "Author",
-        "knowsAbout": ["Credit Repair", "Personal Finance", "Faith", "Mindset", "Self-Improvement"],
-        "sameAs": [
-            "https://payhip.com/ERICCOSTE"
-        ]
-    }
-    </script>
-    
-    <!-- JSON-LD Structured Data - Website -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": "https://ericcoste.com/#website",
-        "url": "https://ericcoste.com",
-        "name": "Eric Coste - Author",
-        "description": "Practical books on credit, money, faith, and mindset",
-        "author": {"@id": "https://ericcoste.com/#person"},
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://ericcoste.com/?s={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
-    }
-    </script>
-    
-    <!-- JSON-LD Structured Data - Books -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Books by Eric Coste",
-        "description": "Collection of practical self-improvement books by Eric Coste",
-        "numberOfItems": 8,
-        "itemListElement": [
+        "@graph": [
+        {
+            "@type": "Person",
+            "@id": "https://ericcoste.com/#person",
+            "name": "Eric Coste",
+            "url": "https://ericcoste.com",
+            "description": "Author of The Hidden Laws of Money and practical guides on credit repair, personal finance, faith, and mindset. Eric Coste writes to make complex topics easy to understand.",
+            "jobTitle": "Author",
+            "image": "https://ericcoste.com/images/eric-coste-logo.webp",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Las Vegas",
+                "addressRegion": "NV",
+                "addressCountry": "US"
+            },
+            "knowsAbout": ["Personal Finance", "Wealth Building", "Credit Repair", "Faith", "Mindset", "Self-Improvement"],
+            "sameAs": [
+                "https://payhip.com/ERICCOSTE",
+                "https://hiddenlawsofmoney.com"
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://ericcoste.com/#website",
+            "url": "https://ericcoste.com",
+            "name": "Eric Coste - Author",
+            "description": "Home of The Hidden Laws of Money and practical books on credit, money, faith, and mindset by Eric Coste.",
+            "author": {"@id": "https://ericcoste.com/#person"},
+            "publisher": {"@id": "https://ericcoste.com/#person"},
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://ericcoste.com/?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://ericcoste.com/#webpage",
+            "url": "https://ericcoste.com/",
+            "name": "Eric Coste | Author of The Hidden Laws of Money",
+            "isPartOf": {"@id": "https://ericcoste.com/#website"},
+            "about": {"@id": "https://ericcoste.com/#person"},
+            "primaryImageOfPage": "https://ericcoste.com/og-image.jpg",
+            "inLanguage": "en"
+        },
+        {
+            "@type": "ItemList",
+            "name": "Books by Eric Coste",
+            "description": "Collection of practical self-improvement books by Eric Coste",
+            "numberOfItems": 8,
+            "itemListElement": [
             {
                 "@type": "ListItem",
                 "position": 1,
@@ -131,7 +147,14 @@
                     "author": {"@id": "https://ericcoste.com/#person"},
                     "url": "https://payhip.com/b/DzR2a",
                     "genre": "Personal Finance",
-                    "inLanguage": "en"
+                    "inLanguage": "en",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "26.00",
+                        "priceCurrency": "USD",
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://payhip.com/b/DzR2a"
+                    }
                 }
             },
             {
@@ -225,10 +248,57 @@
                     "inLanguage": "en"
                 }
             }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Who is Eric Coste?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Eric Coste is an author based in Las Vegas, Nevada, who writes practical, no-fluff books on wealth building, credit repair, personal finance, faith, and mindset. He has sold over 2,700 books."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What is The Hidden Laws of Money about?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The Hidden Laws of Money is Eric Coste's book on the rules that quietly decide who wins and who stays broke. It covers ten wealth laws most people are never taught, plus a 36-page action workbook to apply them."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What other books has Eric Coste written?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Eric Coste has also written God's Power to Get Wealth, Pray with Authority and Confidence, AI Skills for Life, Harder Stronger Better, How to Make Your First $1000 Selling eBooks, The Meticulous Maker's Shipping Kit, and Buried in the Quiet."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Where can I buy Eric Coste's books?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "All of Eric Coste's books are sold on Payhip, linked from each book on this site."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is Eric Coste's writing financial advice?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. Eric Coste's books are educational and practical guides, not licensed financial, legal, or medical advice. Consult a qualified professional for decisions specific to your situation."
+                    }
+                }
+            ]
+        }
         ]
     }
     </script>
-    
+
 </head>
 <body>
     <!-- Header -->
@@ -422,12 +492,41 @@
             <div class="container">
                 <h2 class="section-title" id="about-heading">About Eric Coste</h2>
                 <div class="about-content">
-                    <p>Eric Coste writes to make complex issues and topics clear and easy to understand. His books turn confusing subjects—like credit repair, personal finance, and spiritual growth—into simple, practical steps anyone can follow.</p>
-                    <p>With over 2,700 books sold and readers across the globe, Eric focuses on delivering real value without the fluff. Every book is designed to be read quickly and applied immediately.</p>
+                    <p>Eric Coste writes to make complex issues and topics clear and easy to understand. His latest book, <a href="https://payhip.com/b/DzR2a" target="_blank" rel="noopener noreferrer">The Hidden Laws of Money</a>, lays out the rules that quietly decide who wins and who stays broke. His other books turn confusing subjects—like credit repair, personal finance, and spiritual growth—into simple, practical steps anyone can follow.</p>
+                    <p>Based in Las Vegas, Nevada, with over 2,700 books sold and readers across the globe, Eric focuses on delivering real value without the fluff. Every book is designed to be read quickly and applied immediately.</p>
                 </div>
             </div>
         </section>
         
+        <!-- FAQ Section -->
+        <section class="section" id="faq" aria-labelledby="faq-heading">
+            <div class="container">
+                <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary class="faq-question">Who is Eric Coste?</summary>
+                        <p class="faq-answer">Eric Coste is an author based in Las Vegas, Nevada, who writes practical, no-fluff books on wealth building, credit repair, personal finance, faith, and mindset. He has sold over 2,700 books.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">What is The Hidden Laws of Money about?</summary>
+                        <p class="faq-answer">The Hidden Laws of Money is Eric Coste's book on the rules that quietly decide who wins and who stays broke. It covers ten wealth laws most people are never taught, plus a 36-page action workbook to apply them.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">What other books has Eric Coste written?</summary>
+                        <p class="faq-answer">Eric Coste has also written God's Power to Get Wealth, Pray with Authority and Confidence, AI Skills for Life, Harder Stronger Better, How to Make Your First $1000 Selling eBooks, The Meticulous Maker's Shipping Kit, and Buried in the Quiet.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Where can I buy Eric Coste's books?</summary>
+                        <p class="faq-answer">All of Eric Coste's books are sold on Payhip, linked from each book on this site.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Is Eric Coste's writing financial advice?</summary>
+                        <p class="faq-answer">No. Eric Coste's books are educational and practical guides, not licensed financial, legal, or medical advice. Consult a qualified professional for decisions specific to your situation.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
         <!-- Newsletter Section -->
         <section class="section" id="newsletter" aria-labelledby="newsletter-heading">
             <div class="container">
